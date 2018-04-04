@@ -39,6 +39,6 @@ Please cite Caffe in your publications if it helps your research:
 
 
 ## Arie's Note
-To evaluate the accuracy performance of a model, run using test option, for example:
+To evaluate the accuracy performance of a model, run using test option, for example (using GPU):
 
-./build/tools/caffe test --model=models/bvlc_alexnet/train_val.prototxt --weights=models/bvlc_alexnet/bvlc_alexnet.caffemodel
+./build/tools/caffe test --model=models/bvlc_alexnet/train_val.prototxt --weights=models/bvlc_alexnet/bvlc_alexnet.caffemodel --gpu all
