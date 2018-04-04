@@ -3,19 +3,20 @@
 # N.B. set the path to the imagenet train + val data dirs
 set -e
 
-EXAMPLE=examples/imagenet
+#EXAMPLE=/mnt/data/imagenet/adversarial/BIM_Val_LMDB
+EXAMPLE=lmdb/mobilenet_bim_val_lmdb
 DATA=data/ilsvrc12
 TOOLS=build/tools
 
 #TRAIN_DATA_ROOT=/path/to/imagenet/train/
-VAL_DATA_ROOT=/mnt/data/imagenet/adversarial/BIM_Val_Results/mobilenet_bim_val
+VAL_DATA_ROOT=/mnt/data/imagenet/adversarial/BIM_Val_Results/mobilenet_bim_val/
 
 # Set RESIZE=true to resize the images to 256x256. Leave as false if images have
 # already been resized using another tool.
-RESIZE=false
+RESIZE=true
 if $RESIZE; then
-  RESIZE_HEIGHT=227
-  RESIZE_WIDTH=227
+  RESIZE_HEIGHT=256
+  RESIZE_WIDTH=256
 else
   RESIZE_HEIGHT=0
   RESIZE_WIDTH=0
@@ -53,6 +54,6 @@ GLOG_logtostderr=1 $TOOLS/convert_imageset \
     --shuffle \
     $VAL_DATA_ROOT \
     $DATA/val.txt \
-    $EXAMPLE/ilsvrc12_val_lmdb
+    $EXAMPLE
 
 echo "Done."
