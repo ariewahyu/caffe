@@ -35,3 +35,9 @@ Please cite Caffe in your publications if it helps your research:
       Title = {Caffe: Convolutional Architecture for Fast Feature Embedding},
       Year = {2014}
     }
+
+
+
+## Arie's Note
+To evaluate the accuracy performance of a model, run using test option, for example:
+./build/tools/caffe test --model=models/bvlc_alexnet/train_val.prototxt --weights=models/bvlc_alexnet/bvlc_alexnet.caffemodel
