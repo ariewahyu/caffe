@@ -75,3 +75,6 @@ PROPOSED
 SQUEEZENET
 
     ./build/tools/caffe test --model=models/squeezenet/train_val.prototxt --weights=models/squeezenet/squeezenet.caffemodel --gpu all
+
+
+The corresponding "train_val.prototxt" in this repository is for running on GTX-1080Ti I server (w.r.t. the correct locations of generated adversarial images and LMDB)
