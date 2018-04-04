@@ -41,13 +41,13 @@ Please cite Caffe in your publications if it helps your research:
 ## Arie's Note (Testing robustness against adversarial images)
 1. Prepare pretrained weights (.caffemodel) and training-validation setting (train_val.prototxt), put them into respective folder under directory "models", for example:
 
-models > squeezenet
+    models > squeezenet
 
 2. Prepare LMDB file of generated adversarial images.
 Modify and run file in examples > imagenet > create_imagenet.sh
 Run it in root directory of caffe:
 
-./examples/imagenet/create_imagenet.sh
+    ./examples/imagenet/create_imagenet.sh
 
 3. Modify "train_cal.prototxt" file of the respective model to update the location of training and validation LMDB files.
 To evaluate the accuracy performance of a model, run using test option, for example (using GPU):
@@ -55,22 +55,23 @@ To evaluate the accuracy performance of a model, run using test option, for exam
 
 ALEXNET
 
-./build/tools/caffe test --model=models/bvlc_alexnet/train_val.prototxt --weights=models/bvlc_alexnet/bvlc_alexnet.caffemodel --gpu all
+    ./build/tools/caffe test --model=models/bvlc_alexnet/train_val.prototxt --weights=models/bvlc_alexnet/bvlc_alexnet.caffemodel --gpu all
 
 
 DEEPCOMPRESSION
 
-./build/tools/caffe test --model=models/deepcompression/train_val.prototxt --weights=models/deepcompression/deepcompression.caffemodel --gpu all
+    ./build/tools/caffe test --model=models/deepcompression/train_val.prototxt --weights=models/deepcompression/deepcompression.caffemodel --gpu all
 
 
 INQ
 
-./build/tools/caffe test --model=models/inq/train_val.prototxt --weights=models/inq/inq.caffemodel --gpu all
+    ./build/tools/caffe test --model=models/inq/train_val.prototxt --weights=models/inq/inq.caffemodel --gpu all
 
 
 PROPOSED
 
-./build/tools/caffe test --model=models/proposed/train_val.prototxt --weights=models/proposed/proposed.caffemodel --gpu all
+    ./build/tools/caffe test --model=models/proposed/train_val.prototxt --weights=models/proposed/proposed.caffemodel --gpu all
 
 SQUEEZENET
-./build/tools/caffe test --model=models/squeezenet/train_val.prototxt --weights=models/squeezenet/squeezenet.caffemodel --gpu all
+
+    ./build/tools/caffe test --model=models/squeezenet/train_val.prototxt --weights=models/squeezenet/squeezenet.caffemodel --gpu all
