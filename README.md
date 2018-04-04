@@ -45,9 +45,14 @@ Please cite Caffe in your publications if it helps your research:
 
 2. Prepare LMDB file of generated adversarial images.
 Modify and run file in examples > imagenet > create_imagenet.sh
-Run it in root directory of caffe:
+Set RESIZE=true and RESIZE_HEIGHT=256, RESIZE_WIDTH=256
+Run it in root directory of caffe (require OpenCV):
 
     ./examples/imagenet/create_imagenet.sh
+
+Possible errors: 
+a. Target directory of generated LMDB is already exists. Remove it first.
+b. Required OpenCV
 
 3. Modify "train_cal.prototxt" file of the respective model to update the location of training and validation LMDB files.
 To evaluate the accuracy performance of a model, run using test option, for example (using GPU):
